@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// 1) Necesitamos la variable React en Scope
+    /* ES6 Module */
+import React from 'react'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// 2) Necesitamos la variable ReactDOM en Scope
+import ReactDOM from 'react-dom'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// 3) Necesitamos un compponente en Scope
+// function App(){
+//     return "Hola Mundo"
+// }
+
+// const App = () => "Hola Mundo sin retorno"
+
+import App from './App'
+import "./style.css"
+
+// 4) Necesitamos poner el componente en el DOM
+// ReactDOM.render(<App></App>, document.getElementById("root"))
+ReactDOM.render(<App/>, document.getElementById("root"))

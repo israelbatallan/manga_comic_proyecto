@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html , body , #root {
+    height: 100vh;
+}
+
+body {
+    background: #fff;
+}
+
+header {
+    background-color: #7e7e7e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav {
+    margin: 10px;
+}
+
+.style-link {
+    padding: 10px;
+}
