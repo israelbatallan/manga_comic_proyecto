@@ -1,14 +1,14 @@
 import React from 'react'
+import Nav from './Nav'
 
 const NavBar = () => {
   return (
       <header>
-        <h1>Mi E-Commerce</h1>
-        <nav>
-            <a href="#" className='style-link'>cat1</a>
-            <a href="#" className='style-link'>cat2</a>
-            <a href="#" className='style-link'>cat3</a>
-        </nav>
+        <h1 className='header__title'>Mi E-Commerce</h1>
+        <Nav />
+        <span class="material-icons">
+          shopping_cart
+        </span>
     </header>
   )
 }

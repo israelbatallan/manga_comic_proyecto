@@ -23,6 +23,24 @@ nav {
     margin: 10px;
 }
 
-.style-link {
-    padding: 10px;
+.nav__link{
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.nav__link:hover{
+    background: #000;
+    border-radius: 10px;
+    color: #ff8000;
+}
+
+footer {
+    background-color: #7e7e7e;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
