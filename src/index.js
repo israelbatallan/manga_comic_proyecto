@@ -13,7 +13,9 @@ import ReactDOM from 'react-dom'
 // const App = () => "Hola Mundo sin retorno"
 
 import App from './App'
-import "./style.css"
+import "./style.scss"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // 4) Necesitamos poner el componente en el DOM
 // ReactDOM.render(<App></App>, document.getElementById("root"))
