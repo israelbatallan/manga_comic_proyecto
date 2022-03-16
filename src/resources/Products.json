@@ -1,0 +1,31 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "nombre": "One Piece",
+      "category_id": "manga",
+      "precio": 650,
+      "cantidad": 5,
+      "detail": "Manga One Piece #1",
+      "img": "https://www.ivrea.com.ar/onepiece/onepiece01.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Ajin",
+      "category_id": "manga",
+      "precio": 750,
+      "cantidad": 4,
+      "detail": "Manga Ajin #1",
+      "img": "https://www.ivrea.com.ar/ajin/ajin01.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Goblin Slayer",
+      "category_id": "manga",
+      "precio": 1000,
+      "cantidad": 3,
+      "detail": "Novela Goblin Slayer #1",
+      "img": "https://www.ivrea.com.ar/goblinslayer/goblinslayer01.jpg"
+    }
+  ]
+}

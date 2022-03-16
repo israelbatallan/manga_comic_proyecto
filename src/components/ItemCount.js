@@ -12,8 +12,12 @@ const ItemCount = ({stock, initial}) => {
     }
 
     function onAdd(){
-        alert(`Agregaste ${count} productos a tu carrito`);
-        setCount(initial);
+        if (count == 0) {
+            alert('Agrega minimo un producto')
+        }else{
+            alert(`Agregaste ${count} productos a tu carrito`);
+            setCount(initial);
+        }
     }
 
     return (

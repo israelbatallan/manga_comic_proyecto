@@ -1,9 +1,11 @@
+import { NavLink } from 'react-router-dom'
+
 const Nav = () => {
     return (
         <nav className='nav'>
-            <a href="#" className='nav__link'>cat1</a>
-            <a href="#" className='nav__link'>cat2</a>
-            <a href="#" className='nav__link'>cat3</a>
+            <NavLink className="nav__link" rel="folow" to="/">Mangas</NavLink>
+            <NavLink className="nav__link" to='/'>Comics</NavLink>
+            <NavLink className="nav__link" rel="folow" to='/'>Novelas</NavLink>
         </nav>
     );
 }

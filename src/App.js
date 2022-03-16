@@ -1,19 +1,28 @@
 // rafce crea una plantilla por default
 
-import NavBar from './components/NavBar'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cart from "./components/Cart"
 import Footer from './components/Footer'
+import ItemDetailContainer from "./components/ItemDetailContainer"
 import ItemListContainer from './components/ItemListContainer'
+import NavBar from './components/NavBar'
 
-const App = () => {
-
-    const saludo = "¡Bienvenido a nuestra tienda!"
+function App() {
 
     return(
-        <>
-            <NavBar/>
-            <ItemListContainer greeting={saludo}/>
-            <Footer/>
-        </>
+
+        <BrowserRouter>
+        <NavBar />
+        <main>
+            <Routes>
+            <Route path='/' element={<ItemListContainer />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/category/:category_id' element={<ItemListContainer />} />
+            <Route path='/item/:item_id' element={<ItemDetailContainer />} />
+            </Routes>
+        </main>
+        <Footer />
+        </BrowserRouter>
     )
     }
 

@@ -1,36 +1,29 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
+import products from '../resources/Products.json'
 
-let productosIniciales = [
-  {
-    id: 1,
-    nombre: 'One Piece #1',
-    precio: 650,
-    cantidad: 5,
-    img: 'https://www.ivrea.com.ar/onepiece/onepiece01.jpg'
-  },
-  {
-    id: 2,
-    nombre: 'Ajin #1',
-    precio: 750,
-    cantidad: 4,
-    img: 'https://www.ivrea.com.ar/ajin/ajin01.jpg'
-  }
-]
+const getProducts = () => {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        res(products.list)
+      }, 2000)
+    })
+}
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
+    const {category_id} = useParams()
   
     useEffect(() => {
-      const pedido = new Promise((res, rej) => {
-        setTimeout(() => {
-          res(productosIniciales)
-        }, 2000)
-      })
-      pedido
+        
+        getProducts()
+
       .then((resultado) => {
-        setProductos(resultado)
+          category_id 
+          ? setProductos(resultado.filter((item) => item.category_id === category_id))
+          : setProductos(resultado)
       })
       .catch((error) => {
         console.log(error)
@@ -38,7 +31,7 @@ const ItemListContainer = ({greeting}) => {
       .finally(() => {
         setLoading(false)
       })
-    }, [])
+    }, [category_id])
   
     if(loading) {
       return <h2>Cargando...</h2>

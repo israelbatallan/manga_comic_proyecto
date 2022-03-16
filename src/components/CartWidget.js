@@ -1,10 +1,12 @@
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { CartFill } from 'react-bootstrap-icons'
 
 const CartWidget = () => {
   return (
-    <div>
-        <a href="#" target="blank" className="nav--item"><CartFill/></a>
-    </div>
+    <NavLink className="navbar__link" rel="folow" to='/carrito'>
+      <a href="#" target="blank" className="nav--item"><CartFill/></a>
+    </NavLink>
   )
 }
 

@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
       <header>
         <h1 className='header__title'>Mi E-Commerce</h1>
-        <Nav />
+        <Nav/>
         <CartWidget/>
     </header>
   )

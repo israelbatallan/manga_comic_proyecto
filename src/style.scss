@@ -77,11 +77,35 @@ footer {
 }
 
 img{
+    width: 200px;
+    height: 295px;
     border-radius: 10px;
 }
 
+.conteiner--fluid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .card{
-    background: red;
     margin: 10px;
     width: 200px;
+    align-items: center;
+}
+
+.text-decoration--none {
+    text-decoration: none;
+    text-align: center;
+}
+
+.d--flex{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.d--flex > img{
+    width: 100%;
+    height: auto;
 }
