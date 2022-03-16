@@ -1,15 +1,8 @@
-function ItemListContainer({producto}) {
-    
+
+const ItemListContainer = ({greeting}) => {
     return (
-        <div>
-            <ul>
-                <li>Manga</li>
-                <li>Novela</li>
-                <li>Comics</li>
-            </ul>
-        </div>
+      <h2 className="container">{greeting}</h2>
     )
-
-}
-
-export default ItemListContainer;
+  }
+  
+  export default ItemListContainer
