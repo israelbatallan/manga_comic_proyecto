@@ -1,46 +1,31 @@
-import { Container, Alert } from "react-bootstrap";
-import { useState } from "react"
+import React, {useState} from 'react'
 
+const ItemCount = ({stock, initial}) => {
+    const [count, setCount] = useState(initial)
 
-const ItemCount = (props) => {
-
-    // const resultado = useState()
-    // const estado = resultado[0]
-    // const setEstado = resultado[1]
-
-    const initial = 1
-    const stock = 10
-    const onAdd = 0
-
-    let [estado, setEstado] = useState(initial)
-
-    const handleSumar = () => {
-        if(estado < stock){
-            setEstado(estado + 1)
-        }else{
-            alert("No contamos con esa cantidad en stock")
-        }
+    function increment(){
+        if (count < stock) setCount(count + 1);
     }
 
-    const handleRestar = () => {
-        if(estado > 1){
-            setEstado(estado - 1)
-        }
+    function decrement(){
+        if (count > 1) setCount(count - 1);
     }
 
-
-    const handleCarrito = () => {
-        alert("Se agrego " + estado + " productos al carrito")
+    function onAdd(){
+        alert(`Agregaste ${count} productos a tu carrito`);
+        setCount(initial);
     }
 
     return (
-        <Container as="div">
-            <p>Contador: {estado}</p>
-            <button onClick={handleSumar}>Sumar</button>
-            <button onClick={handleRestar}>Restar</button>
-            <button onClick={handleCarrito}>Agregar al carrito</button>
-        </Container>
-    );
+        <div className="itemCount">
+            <div>
+                <button onClick={decrement}>-</button>
+                <p>{count}</p>
+                <button onClick={increment}>+</button>
+            </div>
+            <button onClick={onAdd} className="addToCart">Agregar al carrito</button>
+        </div>
+    )
 }
 
-export default ItemCount;
+export default ItemCount
