@@ -1,14 +1,15 @@
 import React from 'react'
 import Nav from './Nav'
 import CartWidget from "./CartWidget"
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
       <header>
-        <h1 className='header__title'>Mi E-Commerce</h1>
+        <Link className='header__title' to="/">Mi E-Commerce</Link>
         <Nav/>
         <CartWidget/>
-    </header>
+      </header>
   )
 }
 

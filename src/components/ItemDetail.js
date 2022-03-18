@@ -7,7 +7,7 @@ const ItemDetail = ({item}) => {
   }
   return (
     <div className='d--flex justify-content--around mt--2 mb--2'>
-      <img src={item?.img} alt={`ìmagen_producto`} style={{'maxWidth':'25rem'}}/>
+      <img src={item?.img} alt={`imagen_producto`} style={{'maxWidth':'25rem'}}/>
       <div className="card" style={{'minWidth':'30rem'}}>
         <h2>{item?.nombre}</h2>
         <p>{item?.detail}</p>

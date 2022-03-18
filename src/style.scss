@@ -13,14 +13,25 @@ body {
 }
 
 header {
-    background-color: #7e7e7e;
+    background-color: #ff8000;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
+.header__title{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    margin: 5px;
+    padding: 5px;
+}
+
 nav {
     margin: 10px;
+    display: flex;
+    align-items: center;
+    margin: 5px;
 }
 
 .nav__link{
@@ -35,6 +46,15 @@ nav {
     background: #000;
     border-radius: 10px;
     color: #ff8000;
+}
+
+.nav--item{
+    color: #000;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
 }
 
 .itemCount{
@@ -69,7 +89,7 @@ nav {
 }
 
 footer {
-    background-color: #7e7e7e;
+    background-color: #ff8000;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
@@ -85,11 +105,12 @@ img{
 .conteiner--fluid{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .card{
-    margin: 10px;
+    margin: 15px;
     width: 200px;
     align-items: center;
 }

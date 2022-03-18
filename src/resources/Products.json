@@ -21,11 +21,29 @@
     {
       "id": 3,
       "nombre": "Goblin Slayer",
-      "category_id": "manga",
+      "category_id": "novela",
       "precio": 1000,
       "cantidad": 3,
       "detail": "Novela Goblin Slayer #1",
       "img": "https://www.ivrea.com.ar/goblinslayer/goblinslayer01.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "DCeased: Virus zombie",
+      "category_id": "comic",
+      "precio": 2300,
+      "cantidad": 2,
+      "detail": "Comic DCeased: Virus zombie",
+      "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/184/069/products/dceased_cov_arg1-c8cfecb30f36b9f6c616360714188285-1024-1024.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Batman: Hush",
+      "category_id": "comic",
+      "precio": 3000,
+      "cantidad": 4,
+      "detail": "Comic Batman: Hush",
+      "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/184/069/products/batman_hush_cov_arg1-6c97c77eda6c89941116197122413850-1024-1024.jpg"
     }
   ]
 }

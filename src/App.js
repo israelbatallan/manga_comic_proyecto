@@ -15,10 +15,10 @@ function App() {
         <NavBar />
         <main>
             <Routes>
-            <Route path='/' element={<ItemListContainer />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/category/:category_id' element={<ItemListContainer />} />
-            <Route path='/item/:item_id' element={<ItemDetailContainer />} />
+                <Route path='/' element={<ItemListContainer />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/category/:category_id' element={<ItemListContainer/>} />
+                <Route path='/item/:item_id' element={<ItemDetailContainer />} />
             </Routes>
         </main>
         <Footer />
