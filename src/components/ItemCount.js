@@ -1,23 +1,16 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial = 1, onAdd}) => {
+
     const [count, setCount] = useState(initial)
 
     function increment(){
-        if (count < stock) setCount(count + 1);
+        count < stock && setCount(count + 1);
     }
 
     function decrement(){
-        if (count > 1) setCount(count - 1);
-    }
-
-    function onAdd(){
-        if (count == 0) {
-            alert('Agrega minimo un producto')
-        }else{
-            alert(`Agregaste ${count} productos a tu carrito`);
-            setCount(initial);
-        }
+        count > 1 && setCount(count - 1);
     }
 
     return (
@@ -27,7 +20,7 @@ const ItemCount = ({stock, initial}) => {
                 <p>{count}</p>
                 <button onClick={increment}>+</button>
             </div>
-            <button onClick={onAdd} className="addToCart">Agregar al carrito</button>
+            <button onClick={() => onAdd(count)} className="addToCart">Agregar al carrito</button>
         </div>
     )
 }

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
+import { toast } from 'react-toastify'
 import products from '../resources/Products.json'
 
-const getProducts = () => {
+const saludo = "Nuestras Novedades"
+
+const getProducts = (id) => {
     return new Promise((res, rej) => {
-      setTimeout(() => {
-        res(products.list)
-      }, 2000)
+      setTimeout(() => res(products.list), 2000)
     })
 }
 
@@ -17,28 +18,35 @@ const ItemListContainer = () => {
     const {category_id} = useParams()
   
     useEffect(() => {
-        
-        getProducts()
+      setLoading(true)
+
+      getProducts(category_id)
 
       .then((resultado) => {
-          category_id 
-          ? setProductos(resultado.filter((item) => item.category_id === category_id))
-          : setProductos(resultado)
+        category_id
+        ? setProductos(resultado.filter((item) => item.category_id === category_id))
+        : setProductos(resultado)
       })
-      .catch((error) => {
-        console.log(error)
+      .catch(() => {
+        toast.error("Error while loading products!")
       })
       .finally(() => {
         setLoading(false)
       })
     }, [category_id])
-  
-    if(loading) {
-      return <h2>Loading...</h2>
-    }
-    else {
-      return <ItemList productos={productos} />
-    }
+
+    return (
+      <div className="mainContainer">
+        {
+          loading
+          ? <div className='loader'>Loading...</div>
+          : <>
+              <h2 className="greeting">{saludo}</h2>
+              <ItemList productos={productos}/>
+            </>
+        }
+      </div>
+    )
   
   }
   

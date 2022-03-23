@@ -4,7 +4,7 @@ import { CartFill } from 'react-bootstrap-icons'
 
 const CartWidget = () => {
   return (
-    <NavLink className="navbar__link" rel="folow" to='/carrito'>
+    <NavLink className="navbar__link" rel="folow" to='/cart'>
       <a href="#" target="blank" className="nav--item"><CartFill/></a>
     </NavLink>
   )
