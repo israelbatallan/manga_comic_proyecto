@@ -1,19 +1,22 @@
-import React from 'react'
-import ItemCount from './ItemCount'
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { context } from '../context/CartContext';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from "react"
-import { Link } from 'react-router-dom'
+import ItemCount from './ItemCount'
 
 const ItemDetail = ({item}) => {
+  
+  const { addItem } = useContext(context)
 
-  const [countInCart, setCountInCart] = useState(0)
+  let navigate = useNavigate();
 
   const onAdd = (count) => {
-    setCountInCart(count)
+    addItem(item, count);
+
     toast.success(`Agregaste ${count} tomo${(count > 1) ? 's' : ''} de ${item.nombre} a tu carrito`, {
-      position: "top-right",
-      autoClose: 2500,
+      position: "bottom-right",
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -21,6 +24,8 @@ const ItemDetail = ({item}) => {
       progress: undefined,
       }
     )
+
+    navigate('/cart')
   }
 
   return (
@@ -31,12 +36,9 @@ const ItemDetail = ({item}) => {
           <p className="detail__description">{item?.detail}</p>
           <p className="detail__price">Precio: ${item?.precio}</p>
           <div className="detail__counter">
-            { countInCart === 0
-              ? <ItemCount initial={1} stock={item?.cantidad} onAdd={onAdd}/>
-              : <Link to='/cart'><button className='addToCart'>Terminar compra</button></Link>
-            }
+            <ItemCount stock={item?.cantidad} initial={1} onAdd={onAdd}/>
           </div>
-          <p className="detail__stock">Cantidad disponible: {item.cantidad}</p>
+          <p className="detail__stock">Cantidad disponible: {item?.cantidad}</p>
       </div>
     </div>
   )

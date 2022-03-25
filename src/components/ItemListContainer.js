@@ -8,7 +8,7 @@ const saludo = "Nuestras Novedades"
 
 const getProducts = (id) => {
     return new Promise((res, rej) => {
-      setTimeout(() => res(products.list), 2000)
+      setTimeout(() => res(products.list), 500)
     })
 }
 

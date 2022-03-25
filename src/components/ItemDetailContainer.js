@@ -6,7 +6,7 @@ import products from '../resources/Products.json'
 
 const getItem = (item_id) => {
     return new Promise((res, rej) => {
-    setTimeout(() => {res(products.list.filter((item) => `${item.id}` === item_id)[0])}, 2000)
+    setTimeout(() => {res(products.list.filter((item) => `${item.id}` === item_id)[0])}, 500)
     })
   }
 
