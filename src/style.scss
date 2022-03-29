@@ -51,7 +51,6 @@
                                 border-radius: 10px;
                             }
                             &.cartWidgetContainer{
-                                width: 40px;
                                 display: flex;
                                 justify-content: flex-start;
                                 align-items: center;
@@ -59,7 +58,7 @@
                                     width: 20px;
                                 }
                                 .cartCounter{
-                                    width: 20px;
+                                    margin-left: 3px;
                                     text-align: center;
                                     font-size: 1rem;
                                 }
@@ -175,7 +174,7 @@
                     border-radius: 3px;
                     box-shadow: 0 0 2px;
                     .addToCart{
-                        width: 100%;
+                        width: 10rem;
                         height: 2rem;
                         align-items: center;
                         border: none;
@@ -211,9 +210,26 @@
                     background: #a3a3a3;
                 }
             }
-            .cartList{
+            span{
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            .cartTable{
+                text-align: center;
+                width: 80%;
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                .cartHeaders{
+                    background-color: #ff8000;
+                    border-radius: 3px;
+                    box-shadow: 0 0 2px;
+                    font-weight: 700;
+                }
+                td{
+                    width: 8rem;
+                }
                 .cartItem{
                     display: flex;
                     justify-content: space-between;
@@ -234,9 +250,28 @@
                         }
                     }
                     p{
-                        margin: 0 1rem;
+                        margin: 1rem 1rem;
+                    }
+                    .trash{
+                        transition: all .1s;
+                        &:hover{
+                            transform: scale(1.1);
+                            cursor: pointer;
+                        }
                     }
                 }
+            }
+            .cartButtons{
+                margin: 2rem auto;
+                width: 30%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .cartButton{
+                width: 10rem;
+            }
+            .linkToStore{
+                margin-top: 2rem;
             }
         }
 
@@ -264,7 +299,7 @@
         justify-content: center;
         align-items: center;
         button{
-            width: 20%;
+            width: 5rem;
             height: 2rem;
             align-items: center;
             border: none;
