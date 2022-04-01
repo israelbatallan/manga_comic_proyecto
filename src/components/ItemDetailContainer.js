@@ -2,13 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import ItemDetail from './ItemDetail'
-import products from '../resources/Products.json'
-
-const getItem = (item_id) => {
-    return new Promise((res, rej) => {
-    setTimeout(() => {res(products.list.filter((item) => `${item.id}` === item_id)[0])}, 500)
-    })
-  }
+import { getItem } from '../resources/Firebase'
 
 const ItemDetailContainer = () => {
 
@@ -24,7 +18,7 @@ const ItemDetailContainer = () => {
           setItem(resultado)
         })
       .catch(() => {
-        toast.error("Error while loading product details!")
+        toast.error("Error al cargar los detalles del producto!")
         })
       .finally(() => {
         setLoading(false)

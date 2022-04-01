@@ -1,11 +1,11 @@
 import React from 'react'
 import Item from './Item'
 
-const ItemList = ({ productos }) => {
+const ItemList = ({ items }) => {
   return (
     <section className="itemList">
-        { productos.map(producto => {
-            return <Item key={producto.id} producto={producto} />
+        { items.map(item => {
+            return <Item key={item.id} item={item} />
         })}
     </section>
   )

@@ -41,7 +41,7 @@ const MyProvider = ({ children }) => {
 
     const totalCartValueCalc = () => {
         let totalCartValue = 0
-        cart.forEach(item => totalCartValue += item.precio * item.count)
+        cart.forEach(item => totalCartValue += item.price * item.count)
         return totalCartValue
     }
 

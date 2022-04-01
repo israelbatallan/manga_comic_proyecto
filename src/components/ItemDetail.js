@@ -17,7 +17,7 @@ const ItemDetail = ({item}) => {
     const onAdd = (count) => {
         addItem(item, count);
 
-        toast.success(`Agregaste ${count} tomo${(count > 1) ? 's' : ''} de ${item.nombre} a tu carrito`, {
+        toast.success(`Agregaste ${count} tomo${(count > 1) ? 's' : ''} de ${item.title} a tu carrito`, {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -35,19 +35,19 @@ const ItemDetail = ({item}) => {
         <div className="itemDetail">
             <img src={item?.img} alt={`imagen_producto`}/>
             <div className="detail">
-                  <h2 className="detail__title">{item?.nombre}</h2>
-                  <p className="detail__description">{item?.detail}</p>
-                  <p className="detail__price">Precio: {currecyFormat.format(item?.precio)}</p>
+                  <h2 className="detail__title">{item?.title}</h2>
+                  <p className="detail__description">{item?.description}</p>
+                  <p className="detail__price">Precio: {currecyFormat.format(item?.price)}</p>
                   <div className="detail__counter">
                       {
                           isInCart(item.id)
-                          ? <Link to="/cart">
-                              <button className='addToCart'>Terminar Compra</button>
+                          ? <Link to="/Cart">
+                              <button className='addToCart'>Ver Carrito</button>
                             </Link>
-                          : <ItemCount stock={item?.cantidad} initial={1} onAdd={onAdd}/>
+                          : <ItemCount stock={item?.stock} initial={1} onAdd={onAdd}/>
                       }
                   </div>
-                  <p className="detail__stock">Cantidad disponible: {item?.cantidad}</p>
+                  <p className="detail__stock">Cantidad disponible: {item?.stock}</p>
             </div>
         </div>
     )

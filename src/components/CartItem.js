@@ -8,10 +8,10 @@ export const CartItem = ({ item, removeItem }) => {
 
         <tr className="cartItem">
             <td>
-                <img className="cartImage" src={item.img} alt={item.nombre} />
+                <img className="cartImage" src={item.img} alt={item.title} />
             </td>
             <td>
-                <p>{item.nombre}</p>
+                <p>{item.title}</p>
             </td>
             <td></td>
             <td>
@@ -19,11 +19,11 @@ export const CartItem = ({ item, removeItem }) => {
             </td>
             <td></td>
             <td>
-                <p>{currencyFormat.format(item.precio)}</p>
+                <p>{currencyFormat.format(item.price)}</p>
             </td>
             <td></td>
             <td>
-                <p>{currencyFormat.format(item.count * item.precio)}</p>
+                <p>{currencyFormat.format(item.count * item.price)}</p>
             </td>
             <td></td>
             <td>
