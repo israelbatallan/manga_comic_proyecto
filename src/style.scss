@@ -86,6 +86,9 @@
             .greeting{
                 color: #3f3f3f;
                 font-weight: 500;
+                &.error{
+                    color: #df0000;
+                }
             }
             .itemList{
                 width: 80%;
@@ -122,6 +125,62 @@
                     }
                     .price{
                         flex-grow: 1;
+                    }
+                }
+            }
+            .formContainer{
+                .formGroup{
+                    margin: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .formLabel{
+                        margin: 1rem;
+                        font-weight: bold;
+                    }
+                    .formInput{
+                        margin: 0.5rem;
+                        width: 20rem;
+                        height: 2rem;
+                        border-radius: 3px;
+                        border: 1px solid #444;
+                        padding: 0.5rem;
+                        font-size: small;
+                        transition: all .2s;
+                        &:focus{
+                            border: 1px solid #09f;
+                        }
+                    }
+                    .orderSubmit{
+                        margin: 1rem;
+                        width: 50%;
+                        height: 2rem;
+                        align-items: center;
+                        border: none;
+                        border-radius: 3px;
+                        &:hover{
+                            background: #a3a3a3;
+                        }
+                    }
+                }
+            }
+            .checkoutContainer{
+                margin: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .checkoutInfo{
+                    margin: 1rem 0;
+                }
+                .checkoutButton{
+                    margin: 1rem 0;
+                    width: 170px;
+                    height: 2rem;
+                    align-items: center;
+                    border: none;
+                    border-radius: 3px;
+                    &:hover{
+                        background: #a3a3a3;
                     }
                 }
             }

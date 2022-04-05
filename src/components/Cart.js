@@ -17,17 +17,21 @@ const Cart = () => {
                     <span>Carrito</span>
 
                     <table className="cartTable">
-                        <tr className="cartHeaders">
-                            <td>Producto</td>
-                            <td></td>
-                            <td>Cantidad</td>
-                            <td></td>
-                            <td>Precio</td>
-                            <td></td>
-                            <td>Subtotal</td>
-                            <td></td>
-                        </tr>
-                        {cart.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}/>)}
+                        <thead className="cartHeaders">
+                            <tr>
+                                <td>Producto</td>
+                                <td></td>
+                                <td>Cantidad</td>
+                                <td></td>
+                                <td>Precio</td>
+                                <td></td>
+                                <td>Subtotal</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {cart.map(item => <CartItem key={item.id} item={item} removeItem={removeItem}/>)}
+                        </tbody>
                     </table>
 
                     <span className="total">Total a pagar: {currecyFormat.format(totalCartValueCalc())}</span>
@@ -40,7 +44,7 @@ const Cart = () => {
                         </Link>
 
                         <Link to="/checkout">
-                            <button className="cartButton" onClick={() => clear()}>Verificar</button>
+                            <button className="cartButton">Iniciar Compra</button>
                         </Link>
                     </div>
                   </>

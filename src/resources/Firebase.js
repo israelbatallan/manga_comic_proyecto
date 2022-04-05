@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, getDocs, query, where, collection } from "firebase/firestore";
+import { getFirestore, doc, getDoc, getDocs, query, where, collection, addDoc, Timestamp } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCmhp_aeOcxbn4uU-yYmFhziTTaXHFD3HE",
@@ -8,10 +8,10 @@ const firebaseConfig = {
   storageBucket: "manga-comic-proyecto.appspot.com",
   messagingSenderId: "759902080919",
   appId: "1:759902080919:web:5e19002282bc3375ccfed2"
-};
+}
 
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+const app = initializeApp(firebaseConfig)
+export const db = getFirestore(app)
 
 export async function getItems() {
 
@@ -47,3 +47,27 @@ export async function getItems() {
 
     return { ...itemSnapshot.data(), id: itemSnapshot.id }
   }
+
+  export async function submitOrder(order) {
+
+    const date = Timestamp.now()
+
+    const timestampedOrder = { ...order, date }
+
+    const ordersCollection = collection(db, 'pedidos')
+
+    const sentOrder = await addDoc(ordersCollection, timestampedOrder)
+
+    return (sentOrder.id)
+  }
+
+  export async function getOrderById(id) {
+
+    const ordersCollection = collection(db, 'pedidos')
+
+    const docref = doc(ordersCollection, id)
+
+    const orderSnapshot = await getDoc(docref)
+
+    return orderSnapshot.data() && { ...orderSnapshot.data(), id: orderSnapshot.id }
+}
