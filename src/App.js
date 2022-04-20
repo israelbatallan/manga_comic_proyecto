@@ -1,5 +1,3 @@
-// rafce crea una plantilla por default
-
 import NavBar from './components/NavBar'
 import Main from './components/Main';
 import Footer from './components/Footer'
@@ -21,5 +19,4 @@ const App = () => {
     )
     }
 
-// CommomsJS: module.exports = App
 export default App

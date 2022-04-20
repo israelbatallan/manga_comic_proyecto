@@ -9,7 +9,7 @@ const NavBar = () => {
 
     return (
         <header>
-            <Link className='brand' to="/">Mi E-Commerce</Link>
+            <Link className='brand' to="/">Manga-Comic</Link>
             <nav className='nav'>
                 <ul>
                     <li>
@@ -20,6 +20,9 @@ const NavBar = () => {
                     </li>
                     <li>
                     <NavLink className="nav__link" to="/category/novela">Novelas</NavLink>
+                    </li>
+                    <li>
+                    <NavLink to="/track" className="nav__link">Seguimiento</NavLink>
                     </li>
                     <li>
                         <NavLink className="nav__link cartWidgetContainer" to="/cart">

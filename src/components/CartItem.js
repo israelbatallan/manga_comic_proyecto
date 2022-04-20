@@ -10,12 +10,13 @@ export const CartItem = ({ item, removeItem }) => {
             <td>
                 <img className="cartImage" src={item.img} alt={item.title} />
             </td>
+            <td></td>
             <td>
                 <p>{item.title}</p>
             </td>
             <td></td>
             <td>
-                {item.count} unidad{item.count > 1 ? 'es' : ''}
+                {item.count}
             </td>
             <td></td>
             <td>

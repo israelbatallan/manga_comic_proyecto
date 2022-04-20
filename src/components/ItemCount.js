@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
 
 const ItemCount = ({stock, initial = 1, onAdd}) => {
 

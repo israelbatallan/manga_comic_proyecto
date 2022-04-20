@@ -41,9 +41,14 @@ const ItemDetail = ({item}) => {
                   <div className="detail__counter">
                       {
                           isInCart(item.id)
-                          ? <Link to="/Cart">
-                              <button className='addToCart'>Ver Carrito</button>
-                            </Link>
+                          ? <>
+                                <Link to="/">
+                                <button className='addToCart'>Ver Más Productos</button>
+                                </Link>
+                                <Link to="/Cart">
+                                <button className='addToCart'>Ver Carrito</button>
+                                </Link>
+                            </>
                           : <ItemCount stock={item?.stock} initial={1} onAdd={onAdd}/>
                       }
                   </div>

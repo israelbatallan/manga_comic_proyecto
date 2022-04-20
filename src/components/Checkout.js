@@ -40,7 +40,9 @@ const Checkout = () => {
             ? <>
                 <h2 className="greeting">¡Gracias por su compra!</h2>
                 <div className="checkoutContainer">
-                    <p className="checkoutInfo">Su orden ha sido registrada con el ID: <strong>{ orderId }</strong></p>
+                    <p className="checkoutInfo">Su orden ha sido registrada con el ID: <strong>{ orderId }</strong>
+                    </p>
+                    <button className=" btnToast" onClick={() => navigator.clipboard.writeText(orderId)}>Copiar</button>
                     <p className="checkoutInfo">Conserva éste ID para poder realizar su seguimiento.</p>
                     <Link to='/'>
                         <button className="checkoutButton">Volver a la tienda</button>

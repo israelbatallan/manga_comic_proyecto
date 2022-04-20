@@ -7,7 +7,7 @@ const Cart = () => {
 
     const { cart, removeItem, clear, totalQuantityCalc, totalCartValueCalc } = useContext(context)
     
-    const currecyFormat = new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS" })
+    const currencyFormat = new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS" })
 
     return (
         <div className="cart">
@@ -26,7 +26,6 @@ const Cart = () => {
                                 <td>Precio</td>
                                 <td></td>
                                 <td>Subtotal</td>
-                                <td></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,7 +33,7 @@ const Cart = () => {
                         </tbody>
                     </table>
 
-                    <span className="total">Total a pagar: {currecyFormat.format(totalCartValueCalc())}</span>
+                    <span className="total">Total a pagar: {currencyFormat.format(totalCartValueCalc())}</span>
 
                     <div className="cartButtons">
                         <button className="cartButton" onClick={() => clear()}>Vaciar Carrito</button>
