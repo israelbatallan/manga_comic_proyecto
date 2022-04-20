@@ -11,9 +11,8 @@ La idea es de un e-commerce simulando un local de venta de tomos (mangas, novela
 * Ver los productos agregados al carrito, poder eliminar un producto en particular o vaciar el carrito por completo.
 * Al confirmar la compra se entregara un ID generado por Firebase, con el cual podrá realizar el seguimiento y ver el estado de su pedido.
 
-[![Video]()](https://drive.google.com/file/d/1G7tMszWabqIzA5lvbbdGvWo-nMzcF96S/view?usp=sharing)
+* Video de funcionamiento de la app
 https://drive.google.com/file/d/1G7tMszWabqIzA5lvbbdGvWo-nMzcF96S/view?usp=sharing
-)]]
 
 ***
 ## Instalación
